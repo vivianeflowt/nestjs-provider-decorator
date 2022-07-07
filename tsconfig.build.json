@@ -1,15 +1,4 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "sourceMap": false
-    },
-    "exclude": [
-        "**/__tests__/**",
-        "**/__mocks__/**",
-        "**/__fixtures__/**",
-        "*.test.ts",
-        "*.test.tsx",
-        "*.spec.ts",
-        "*.spec.tsx"
-    ]
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }
