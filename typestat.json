@@ -1,0 +1,18 @@
+{
+    "fixes": {
+        "importExtensions": true,
+        "incompleteTypes": true,
+        "missingProperties": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noInferableTypes": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strictNullChecks": true,
+        "trailingCommas": true,
+        "useDefineForClasses": true,
+        "useDefineForMethods": true,
+        "useDefineForModules": true,
+        "strictNonNullAssertions": true
+    }
+}
