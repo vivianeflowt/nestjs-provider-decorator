@@ -1,0 +1,32 @@
+{
+    "git": {
+        "requireBranch": "master",
+        "requireCleanWorkingDir": false,
+        "commit": true,
+        "tagAnnotation": "Release ${version}",
+        "push": false,
+        "commitMessage": "chore: release v${version}",
+        "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    },
+    "npm": {
+        "publish": false
+    },
+    "github": {
+        "release": true
+    },
+    "hooks": {
+        "after:git:release": "git push origin HEAD",
+        "after:bump": [
+            "npm run build",
+            "npx auto-changelog -p"
+        ],
+        "before:init": [
+            "pnpm install",
+            "pnpm run test",
+            "pnpm run format",
+            "pnpm run lint"
+        ],
+        "after:git:release": "echo After git push, before github release",
+        "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
+}
